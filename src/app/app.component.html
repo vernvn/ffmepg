@@ -1,0 +1,57 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+</style>
+
+
+<div class="content" role="main">
+
+  <video src="{{currentVideo}}" controls="controls" class="video1" #video></video>
+
+  <div class="ensure" (click)="ensure()">保存</div>
+
+  <!-- <video src="{{videoSrc}}" controls="controls"></video> -->
+
+  <div class="unit">
+
+    <div class="video-wrap">
+      <div class="card" *ngFor="let item of cardList">
+        <img src="{{item}}" alt="">
+      </div>
+    </div>
+  
+    <div class="overlay lay_left" #lay_left></div>
+  
+    <div class="select-card" appDynamicDrag [minLimit]="10" (mouseEnter)="mouseEnterHandle($event)">
+      <div class="start">{{startTime}}</div>
+      <div class="end">{{endTime}}</div>
+    </div>
+
+    <div class="overlay lay_right" #lay_right></div>
+
+  </div>
+
+  
+</div>
+
+
+
+
